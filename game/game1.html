@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            div
+            {
+                margin:auto;
+            }
+            textarea
+            {
+                height:500px;
+                font-size:50px;
+                color:#2D79C4;
+            }
+            img,button,div,textarea
+            {
+                width:100%;
+            }
+            button
+            {
+                height:200px;
+                background-color:#2D79C4;
+                color:white;
+                border:0px;
+                font-size:60px;
+            }
+            
+        </style>
+        <script src = "http://4.builddaydream.sinaapp.com/game/js/game1.js" charset="UTF-8"> </script>
+        <script src = "http://4.builddaydream.sinaapp.com/xjs/wechatBrowserJS.js" charset="UTF-8"> </script>
+    </head>
+    <body onload="initialized();getCurrent();">
+        <div class="content">
+        	<img src = "http://builddaydream-bddres.stor.sinaapp.com/xiaoming.jpg"/>
+        </div>
+        <div class = "block">
+            <textarea id="story" readonly></textarea>
+        </div>
+        <div>
+            <button onclick ="addSentence();">我要接龙</button>
+        </div>
+        
+    </body>
+
+</html>

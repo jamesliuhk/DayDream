@@ -1,6 +1,7 @@
 <?php
 include "wechat_tpl.php";
-include "DayDream.php";
+include "daydream/DayDream.php";
+include "game/gameHost.php";
 //获取微信发送数据
 $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
  
@@ -57,6 +58,16 @@ else
                   	$newsURL  = $URL[1]; //index 1 contain new url 
         		  	$resultStr = sprintf($newsTpl, $fromUsername, $toUsername, time(), $msgType, 1, $newsTitle, $description, $picURL, $newsURL);
              }
+              else if($content == "游戏")
+              {
+                  	$URL = getGameAdress(1); //getUserDream($user,$type), $type=2 return record of $user
+                  	$msgType = "news";
+                  	$newsTitle = "白日梦开脑洞";
+                  	$description = "今日游戏：故事接龙";
+                  	$picURL = "http://builddaydream-bddres.stor.sinaapp.com/writing.jpg"; //index 0 contain picture url, while
+                  	$newsURL  = $URL; //index 1 contain new url 
+        		  	$resultStr = sprintf($newsTpl, $fromUsername, $toUsername, time(), $msgType, 1, $newsTitle, $description, $picURL, $newsURL);
+              }
               else
               {
                   	$URL = getDayDream($fromUsername); //getUserDream($user,$type), $type=1 return two/ random day dream
